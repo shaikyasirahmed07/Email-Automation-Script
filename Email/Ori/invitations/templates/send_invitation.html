@@ -1,0 +1,64 @@
+<!-- invitations/templates/invitations/send_invitation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        h1 {
+            color: #333;
+            text-align: center; /* Align center horizontally */
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            font-size: 20px;
+            padding: 10px;
+            align: center
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius:25px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Send Invitation</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Invitation</button>
+    </form>
+</body>
+</html>
